@@ -1,6 +1,13 @@
 import { FileModel } from "./models/Folder";
+import { File } from "./types/File";
+
+enum FileType {
+	FOLDER = "Folder",
+	TEXT_FILE = "Text file",
+}
 
 export const resolvers = {
+	FileType,
 	Query: {
 		getAllFiles: async () => {
 			const results = await FileModel.find({});
@@ -11,11 +18,11 @@ export const resolvers = {
 	},
 
 	Mutation: {
-		createFile: async (_: any, { id, name, type }: any) => {
+		createFile: async (_: any, { file }: any) => {
 			const results = await FileModel.create({
-				id,
-				name,
-				type,
+				id: file.id,
+				name: file.name,
+				type: file.type,
 			});
 			return {
 				results: results,

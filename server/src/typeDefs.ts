@@ -1,10 +1,15 @@
 import { gql } from "apollo-server-express";
 
 export const typeDefs = gql`
+	enum FileType {
+		FOLDER
+		TEXT_FILE
+	}
+
 	type File {
-		id: ID!
+		id: ID
 		name: String
-		type: String
+		type: FileType
 	}
 
 	type FileList {
@@ -15,7 +20,13 @@ export const typeDefs = gql`
 		getAllFiles: FileList
 	}
 
+	input FileInput {
+		id: ID
+		name: String
+		type: FileType
+	}
+
 	type Mutation {
-		createFile(id: ID!, name: String, type: String): File
+		createFile(file: FileInput): File
 	}
 `;
