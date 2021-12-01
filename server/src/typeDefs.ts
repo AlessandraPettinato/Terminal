@@ -14,4 +14,8 @@ export const typeDefs = gql`
 	type Query {
 		getAllFiles: FileList
 	}
+
+	type Mutation {
+		createFile(id: ID!, name: String, type: String): File
+	}
 `;

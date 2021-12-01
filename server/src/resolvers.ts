@@ -9,4 +9,17 @@ export const resolvers = {
 			};
 		},
 	},
+
+	Mutation: {
+		createFile: async (_: any, { id, name, type }: any) => {
+			const results = await FileModel.create({
+				id,
+				name,
+				type,
+			});
+			return {
+				results: results,
+			};
+		},
+	},
 };
