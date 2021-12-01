@@ -1,7 +1,12 @@
+import { FolderModel } from "./models/Folder";
+
 export const resolvers = {
 	Query: {
-		hello: () => {
-			return "Hello world";
+		getAllFolders: async () => {
+			const results = await FolderModel.find({});
+			return {
+				results: results,
+			};
 		},
 	},
 };
