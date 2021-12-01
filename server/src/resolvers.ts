@@ -1,9 +1,9 @@
-import { FolderModel } from "./models/Folder";
+import { FileModel } from "./models/Folder";
 
 export const resolvers = {
 	Query: {
-		getAllFolders: async () => {
-			const results = await FolderModel.find({});
+		getAllFiles: async () => {
+			const results = await FileModel.find({});
 			return {
 				results: results,
 			};

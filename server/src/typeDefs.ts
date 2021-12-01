@@ -1,16 +1,17 @@
 import { gql } from "apollo-server-express";
 
 export const typeDefs = gql`
-	type Folder {
+	type File {
 		id: ID!
 		name: String
+		type: String
 	}
 
-	type FolderList {
-		results: [Folder]
+	type FileList {
+		results: [File]
 	}
 
 	type Query {
-		getAllFolders: FolderList
+		getAllFiles: FileList
 	}
 `;

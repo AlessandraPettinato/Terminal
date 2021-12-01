@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
 
-const FolderSchema = new mongoose.Schema({
+const FileSchema = new mongoose.Schema({
 	id: { type: String },
 	name: String,
+	type: String,
 });
 
-export const FolderModel = mongoose.model("folders", FolderSchema);
+export const FileModel = mongoose.model("files", FileSchema);
