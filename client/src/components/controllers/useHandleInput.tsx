@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { CREATE_FILE, GET_ALL_FILES } from "../../queries/FileQueries";
 
 const useHandleInput = () => {
 	const [values, setValues] = useState({
@@ -17,6 +19,10 @@ const useHandleInput = () => {
 
 	const [errorHandling] = useState({
 		message: "Command not found",
+	});
+
+	const [createFile] = useMutation(CREATE_FILE, {
+		refetchQueries: [GET_ALL_FILES],
 	});
 
 	const handleChangeInput = (e: any) => {
@@ -47,6 +53,18 @@ const useHandleInput = () => {
 		setDisabled(true);
 		setNewInput(true);
 		manageInput();
+		if (values.userInput.includes("mkdir", 0)) {
+			createFile({
+				variables: {
+					createFileId: (Math.random() * 10)
+						.toFixed(5)
+						.toString()
+						.replace(".", ""),
+					name: values.userInput.split("mkdir")[1].trim(),
+					type: "FOLDER",
+				},
+			});
+		}
 	};
 
 	return {
