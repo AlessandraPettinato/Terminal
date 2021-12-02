@@ -14,6 +14,8 @@ const UserInput: React.FC<{ files: Array<FileType> }> = ({ files }) => {
 		handleClickInput,
 		showComponent,
 		newInput,
+		showError,
+		errorHandling,
 	} = useHandleInput();
 	return (
 		<>
@@ -35,6 +37,11 @@ const UserInput: React.FC<{ files: Array<FileType> }> = ({ files }) => {
 						const { id, name, type } = item;
 						return <File key={id} id={id} name={name} type={type} />;
 					})}
+				{showError && (
+					<p>
+						{values.userInput}: {errorHandling.message}
+					</p>
+				)}
 			</div>
 			{newInput && <UserInput files={files} />}
 		</>

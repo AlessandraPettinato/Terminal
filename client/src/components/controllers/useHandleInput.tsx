@@ -15,6 +15,10 @@ const useHandleInput = () => {
 
 	const [showError, setShowError] = useState<boolean>(false);
 
+	const [errorHandling] = useState({
+		message: "Command not found",
+	});
+
 	const handleChangeInput = (e: any) => {
 		setBlinking(true);
 		setValues({
@@ -50,6 +54,7 @@ const useHandleInput = () => {
 		showComponent,
 		showError,
 		newInput,
+		errorHandling,
 	};
 };
 
