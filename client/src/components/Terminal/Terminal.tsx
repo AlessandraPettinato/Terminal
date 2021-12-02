@@ -3,6 +3,7 @@ import { useQuery } from "@apollo/client";
 import { QUERY_GET_ALL_FILES } from "../../queries/File";
 import { File } from "../../types/File";
 
+import UserInput from "../controllers/UserInput";
 import "./Terminal.css";
 
 const Terminal: React.FC = () => {
@@ -35,7 +36,9 @@ const Terminal: React.FC = () => {
 	return (
 		<>
 			<header className="login">{login}</header>
-			<div className="user-container">{/* <UserInput /> */}</div>
+			<div className="user-container">
+				<UserInput files={files} />
+			</div>
 		</>
 	);
 };
