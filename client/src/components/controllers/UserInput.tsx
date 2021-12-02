@@ -1,14 +1,24 @@
 import useHandleInput from "./useHandleInput";
 import { BsArrowRightShort } from "react-icons/bs";
-import "./UserInput.css";
 
-const UserInput: React.FC<{ files: any }> = (files) => {
-	const { values, typing, disabled, handleChangeInput } = useHandleInput();
+import File from "../File/File";
+import "./UserInput.css";
+import { FileType } from "../../types/FileType";
+
+const UserInput: React.FC<{ files: Array<FileType> }> = ({ files }) => {
+	const {
+		values,
+		typing,
+		disabled,
+		handleChangeInput,
+		handleClickInput,
+		showComponent,
+	} = useHandleInput();
 	return (
 		<div className="form-container">
 			<BsArrowRightShort className="arrow" />
 			<p className="tilde"> ~ </p>
-			<form>
+			<form onSubmit={handleClickInput}>
 				<input
 					autoFocus
 					type="text"
@@ -17,6 +27,12 @@ const UserInput: React.FC<{ files: any }> = (files) => {
 					disabled={!typing ? disabled : disabled}
 				/>
 			</form>
+			{showComponent &&
+				values.userInput === "ls" &&
+				files.map((item: { id: string; name: string; type: string }) => {
+					const { id, name, type } = item;
+					return <File key={id} id={id} name={name} type={type} />;
+				})}
 		</div>
 	);
 };
