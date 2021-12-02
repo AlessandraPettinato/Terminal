@@ -1,7 +1,8 @@
 import useHandleInput from "./useHandleInput";
 import { BsArrowRightShort } from "react-icons/bs";
 
-import File from "../File/File";
+import File from "../Files/File";
+import NewFile from "../Files/NewFile";
 import "./UserInput.css";
 import { FileType } from "../../types/FileType";
 
@@ -34,12 +35,13 @@ const UserInput: React.FC<{ files: Array<FileType> }> = ({ files }) => {
 				</form>
 				<div className="files-container">
 					{showComponent &&
-						values.userInput === "ls" &&
+						values.userInput.includes("ls", 0) &&
 						files.map((item: { id: string; name: string; type: string }) => {
 							const { id, name, type } = item;
-							return <File key={id} id={id} name={name} type={type} />;
+							return <File key={id} name={name} type={type} />;
 						})}
 				</div>
+				{newInput && values.userInput.includes("mkdir", 0) && <NewFile />}
 				{showError && (
 					<p className="err">
 						{values.userInput}: {errorHandling.message}

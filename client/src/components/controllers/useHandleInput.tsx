@@ -32,6 +32,10 @@ const useHandleInput = () => {
 				setShowComponent(true);
 				setShowError(false);
 				break;
+			case "mkdir":
+				setShowComponent(true);
+				setShowError(false);
+				break;
 			default:
 				setShowComponent(false);
 				setShowError(true);
