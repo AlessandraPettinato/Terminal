@@ -20,13 +20,8 @@ export const typeDefs = gql`
 		getAllFiles: FileList
 	}
 
-	input FileInput {
-		id: ID
-		name: String
-		type: FileType
-	}
-
 	type Mutation {
-		createFile(file: FileInput): File
+		createFile(id: ID, name: String, type: FileType): File
+		deleteFile(id: ID): File
 	}
 `;

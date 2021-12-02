@@ -1,0 +1,33 @@
+.form-container {
+	grid-row: 2;
+	grid-column: 2/-1;
+	display: grid;
+	grid-template-columns: 0.1fr 0.1fr 5fr;
+	grid-template-rows: 0.1fr 0.1fr;
+	align-items: center;
+}
+
+.arrow {
+	grid-column: 1;
+	color: #41c731;
+	align-self: center;
+	font-size: 1.5rem;
+}
+
+.tilde {
+	grid-column: 2;
+	color: #40c5d1;
+	font-size: 1.8rem;
+}
+
+input {
+	width: 50rem;
+	background: black;
+	border: black;
+	color: white;
+	caret-color: transparent;
+	font-size: 1.2rem;
+	outline: none;
+	margin-left: 0.5rem;
+	caret-color: #9c9d9d;
+}
