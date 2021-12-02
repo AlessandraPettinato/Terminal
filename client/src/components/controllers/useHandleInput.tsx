@@ -11,6 +11,8 @@ const useHandleInput = () => {
 
 	const [showComponent, setShowComponent] = useState<boolean>(false);
 
+	const [newInput, setNewInput] = useState<boolean>(false);
+
 	const [showError, setShowError] = useState<boolean>(false);
 
 	const handleChangeInput = (e: any) => {
@@ -35,6 +37,7 @@ const useHandleInput = () => {
 	const handleClickInput = (e: any) => {
 		e.preventDefault();
 		setDisabled(true);
+		setNewInput(true);
 		manageInput();
 	};
 
@@ -46,6 +49,7 @@ const useHandleInput = () => {
 		handleClickInput,
 		showComponent,
 		showError,
+		newInput,
 	};
 };
 
