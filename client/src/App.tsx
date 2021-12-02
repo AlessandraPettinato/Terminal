@@ -1,5 +1,5 @@
 import Provider from "./api/Provider";
-import Terminal from "./components/Terminal";
+import Terminal from "./components/Terminal/Terminal";
 import "./App.css";
 
 function App() {

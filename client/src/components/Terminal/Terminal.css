@@ -1,0 +1,12 @@
+.login {
+	grid-column: 2/4;
+	grid-row: 1;
+	margin-top: 1rem;
+}
+
+.user-container {
+	grid-column: 2/8;
+	grid-row: 2;
+	display: flex;
+	flex-flow: column;
+}
