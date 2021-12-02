@@ -20,18 +20,18 @@ export const resolvers = {
 	Mutation: {
 		createFile: async (_: any, { id, name, type }: File) => {
 			const newFile = await FileModel.create({
-				id,
-				name,
-				type,
+				id: id,
+				name: name,
+				type: type,
 			});
 
 			return newFile;
 		},
 
 		deleteFile: async (_: any, { id }: File) => {
-			const filter = { id };
+			const deleteFile = await FileModel.findOneAndDelete({ id: id });
 
-			return await FileModel.findOneAndDelete(filter);
+			return deleteFile;
 		},
 	},
 };

@@ -22,6 +22,6 @@ export const typeDefs = gql`
 
 	type Mutation {
 		createFile(id: ID, name: String, type: FileType): File
-		deleteFile(id: ID): FileList
+		deleteFile(id: ID): File
 	}
 `;
