@@ -1,10 +1,11 @@
-import "./App.css";
 import Provider from "./api/Provider";
+import Terminal from "./components/Terminal";
+import "./App.css";
 
 function App() {
 	return (
 		<Provider>
-			<p>Hello from App</p>
+			<Terminal />
 		</Provider>
 	);
 }
