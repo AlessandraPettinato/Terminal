@@ -1,0 +1,10 @@
+.documents {
+	grid-column: 3;
+	grid-column: 2/-1;
+	color: #40c5d1;
+}
+
+.documents,
+.text-file {
+	font-size: 1rem;
+}

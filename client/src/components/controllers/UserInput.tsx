@@ -17,6 +17,7 @@ const UserInput: React.FC<{ files: Array<FileType> }> = ({ files }) => {
 		showError,
 		errorHandling,
 	} = useHandleInput();
+
 	return (
 		<>
 			<div className="form-container">
@@ -31,14 +32,16 @@ const UserInput: React.FC<{ files: Array<FileType> }> = ({ files }) => {
 						disabled={!typing ? disabled : disabled}
 					/>
 				</form>
-				{showComponent &&
-					values.userInput === "ls" &&
-					files.map((item: { id: string; name: string; type: string }) => {
-						const { id, name, type } = item;
-						return <File key={id} id={id} name={name} type={type} />;
-					})}
+				<div className="files-container">
+					{showComponent &&
+						values.userInput === "ls" &&
+						files.map((item: { id: string; name: string; type: string }) => {
+							const { id, name, type } = item;
+							return <File key={id} id={id} name={name} type={type} />;
+						})}
+				</div>
 				{showError && (
-					<p>
+					<p className="err">
 						{values.userInput}: {errorHandling.message}
 					</p>
 				)}

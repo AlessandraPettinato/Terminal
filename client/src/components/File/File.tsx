@@ -1,3 +1,5 @@
+import "./File.css";
+
 const File: React.FC<{ id: string; name: string; type: string }> = ({
 	id,
 	name,
@@ -5,7 +7,7 @@ const File: React.FC<{ id: string; name: string; type: string }> = ({
 }) => {
 	return (
 		<>
-			<p>{name}</p>
+			<p className={type === "FOLDER" ? "documents" : "text-file"}>{name}</p>
 		</>
 	);
 };
