@@ -41,7 +41,9 @@ const UserInput: React.FC<{ files: Array<FileType> }> = ({ files }) => {
 							return <File key={id} name={name} type={type} />;
 						})}
 				</div>
-				{newInput && values.userInput === "mkdir" + "" && <NewFile />}
+				{newInput &&
+					(values.userInput === "mkdir" ||
+						(values.userInput === "touch" && <NewFile />))}
 				{showError && (
 					<p className="err">
 						{values.userInput}: {errorHandling.message}
