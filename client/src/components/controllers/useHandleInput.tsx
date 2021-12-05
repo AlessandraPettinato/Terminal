@@ -33,12 +33,16 @@ const useHandleInput = () => {
 	};
 
 	const manageInput = () => {
-		switch (values.userInput) {
+		switch (values.userInput.trim()) {
 			case "ls":
 				setShowComponent(true);
 				setShowError(false);
 				break;
 			case "mkdir":
+				setShowComponent(true);
+				setShowError(false);
+				break;
+			case "touch":
 				setShowComponent(true);
 				setShowError(false);
 				break;
@@ -53,15 +57,19 @@ const useHandleInput = () => {
 		setDisabled(true);
 		setNewInput(true);
 		manageInput();
-		if (values.userInput.includes("mkdir", 0)) {
+		let folder = values.userInput.includes("mkdir", 0);
+		let textFile = values.userInput.includes("touch", 0);
+		if (folder || textFile) {
 			createFile({
 				variables: {
 					createFileId: (Math.random() * 10)
 						.toFixed(5)
 						.toString()
 						.replace(".", ""),
-					name: values.userInput.split("mkdir")[1].trim(),
-					type: "FOLDER",
+					name: folder
+						? values.userInput.split("mkdir")[1].trim()
+						: values.userInput.split("touch")[1].trim(),
+					type: folder ? "FOLDER" : "TEXT_FILE",
 				},
 			});
 		}
