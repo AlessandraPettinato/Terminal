@@ -35,13 +35,13 @@ const UserInput: React.FC<{ files: Array<FileType> }> = ({ files }) => {
 				</form>
 				<div className="files-container">
 					{showComponent &&
-						values.userInput.includes("ls", 0) &&
+						values.userInput === "ls" &&
 						files.map((item: { id: string; name: string; type: string }) => {
 							const { id, name, type } = item;
 							return <File key={id} name={name} type={type} />;
 						})}
 				</div>
-				{newInput && values.userInput.includes("mkdir", 0) && <NewFile />}
+				{newInput && values.userInput === "mkdir" + "" && <NewFile />}
 				{showError && (
 					<p className="err">
 						{values.userInput}: {errorHandling.message}
