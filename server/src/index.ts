@@ -5,7 +5,7 @@ const dbconnection = require("./dbconnection");
 import { typeDefs } from "./typeDefs";
 import { resolvers } from "./resolvers";
 
-const port = 8080;
+const port = 8000;
 
 const startServer = async () => {
 	const app = express();
