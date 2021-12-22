@@ -7,21 +7,27 @@ const Dock: React.FC = () => {
 				<ul>
 					<li>
 						<span>Chrome</span>
-						<a href="#">
-							<img src="https://res.cloudinary.com/dg5lakmem/image/upload/v1640188085/pngegg_rjnob8.png" />
-						</a>
+
+						<img
+							src="https://res.cloudinary.com/dg5lakmem/image/upload/v1640188085/pngegg_rjnob8.png"
+							alt="chrome icon"
+						/>
 					</li>
 					<li>
 						<span>Terminal</span>
-						<a href="#">
-							<img src="https://res.cloudinary.com/dg5lakmem/image/upload/v1640187916/favpng_macintosh-terminal-macos-command-line-interface_ziuzg2.png" />
-						</a>
+
+						<img
+							src="https://res.cloudinary.com/dg5lakmem/image/upload/v1640187916/favpng_macintosh-terminal-macos-command-line-interface_ziuzg2.png"
+							alt="terminal icon"
+						/>
 					</li>
 					<li>
 						<span>App Store</span>
-						<a href="#">
-							<img src="https://res.cloudinary.com/dg5lakmem/image/upload/v1640187961/favpng_blue-computer-icon-area-text_vcpvdp.png" />
-						</a>
+
+						<img
+							src="https://res.cloudinary.com/dg5lakmem/image/upload/v1640187961/favpng_blue-computer-icon-area-text_vcpvdp.png"
+							alt="app-store icon"
+						/>
 					</li>
 				</ul>
 			</div>

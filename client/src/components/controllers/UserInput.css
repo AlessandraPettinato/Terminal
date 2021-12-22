@@ -11,13 +11,13 @@
 	grid-column: 1;
 	color: #41c731;
 	align-self: center;
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 }
 
 .tilde {
 	grid-column: 2;
 	color: #40c5d1;
-	font-size: 1.8rem;
+	font-size: 1.3rem;
 }
 
 input {
@@ -25,7 +25,7 @@ input {
 	border: black;
 	color: white;
 	caret-color: transparent;
-	font-size: 1.2rem;
+	font-size: 1rem;
 	outline: none;
 	margin-left: 0.5rem;
 	caret-color: #9c9d9d;

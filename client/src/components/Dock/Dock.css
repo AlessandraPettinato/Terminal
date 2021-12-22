@@ -41,7 +41,7 @@
 	width: 100%;
 	background-color: rgba(0, 0, 0, 0.75);
 	padding: 4px 0;
-	border-radius: 12px;
+	border-radius: 5%;
 }
 .dock-container li:hover span {
 	display: block;
