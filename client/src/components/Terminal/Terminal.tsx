@@ -44,7 +44,7 @@ const Terminal: React.FC = () => {
 		<Draggable
 			handle=".handle"
 			scale={1}
-			// position={null || undefined}
+			position={undefined}
 			bounds={{
 				left: 0,
 				top: 0,
@@ -82,7 +82,6 @@ const Terminal: React.FC = () => {
 					/>
 				</div>
 				<div className="login">{login}</div>
-
 				<div className="user-container">
 					<UserInput width={size.width} height={size.height} files={files} />
 				</div>

@@ -20,11 +20,9 @@
 
 .login {
 	background: black;
-}
-
-.login {
 	margin: 0.5rem 0 0 0.5rem;
 	grid-row: 2;
+	font-size: 1rem;
 }
 
 .user-container {

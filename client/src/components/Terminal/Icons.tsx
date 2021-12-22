@@ -9,7 +9,7 @@ export const AiFillCloseCircle = ({
 		<svg
 			stroke={stroke}
 			fill={fill}
-			stroke-width="0"
+			strokeWidth="0"
 			viewBox="0 0 1024 1024"
 			height={height}
 			width={width}
@@ -32,7 +32,7 @@ export const IoMdRemoveCircle = ({
 		<svg
 			stroke={stroke}
 			fill={fill}
-			stroke-width="0"
+			strokeWidth="0"
 			viewBox="0 0 512 512"
 			height={height}
 			width={width}
