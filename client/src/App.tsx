@@ -1,12 +1,12 @@
 import Provider from "./api/Provider";
-import Terminal from "./components/Terminal/Terminal";
+import Desktop from "./components/Desktop/Desktop";
 import "./App.css";
 
 function App() {
 	return (
 		<Provider>
 			<div className="App">
-				<Terminal />
+				<Desktop />
 			</div>
 		</Provider>
 	);

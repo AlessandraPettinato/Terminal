@@ -1,12 +1,25 @@
+.terminal-window {
+	background: black;
+}
+
 .login {
+	background: black;
+}
+
+.box {
+	display: flex;
+	flex-direction: column;
+}
+
+/* .login {
 	grid-column: 2/4;
 	grid-row: 1;
 	margin-top: 1rem;
 }
 
 .user-container {
-	grid-column: 2/8;
+	grid-column: 2/4;
 	grid-row: 2;
 	display: flex;
 	flex-flow: column;
-}
+} */
