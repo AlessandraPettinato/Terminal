@@ -1,25 +1,34 @@
 .terminal-window {
-	background: black;
+	overflow-y: scroll;
+	display: grid;
+	grid-template-rows: 25px 35px 30px;
+	border-radius: 2%;
+}
+
+.bar {
+	grid-row: 1;
+	background-color: #505050;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 0.2rem 0 0 0.2rem;
+}
+
+.icon {
+	margin-right: 0.3rem;
 }
 
 .login {
 	background: black;
 }
 
-.box {
-	display: flex;
-	flex-direction: column;
-}
-
-/* .login {
-	grid-column: 2/4;
-	grid-row: 1;
-	margin-top: 1rem;
+.login {
+	margin: 0.5rem 0 0 0.5rem;
+	grid-row: 2;
 }
 
 .user-container {
-	grid-column: 2/4;
-	grid-row: 2;
 	display: flex;
 	flex-flow: column;
-} */
+	grid-row: 3;
+}

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
 import Draggable from "react-draggable";
 import { ResizableBox } from "react-resizable";
+import { AiFillCloseCircle, IoMdRemoveCircle } from "./Icons";
 
 import { GET_ALL_FILES } from "../../queries/FileQueries";
 import { FileType } from "../../types/FileType";
@@ -38,37 +39,52 @@ const Terminal: React.FC = () => {
 
 	if (loading) <p>Loading...</p>;
 	if (error) <p>Somethins went wrong: {error.message}</p>;
+
 	return (
 		<Draggable
 			handle=".handle"
 			scale={1}
-			position={null || undefined}
+			// position={null || undefined}
 			bounds={{
 				left: 0,
 				top: 0,
 				right: window.innerWidth - size.width,
 				bottom: window.innerHeight - size.height - 80,
 			}}
-			defaultPosition={{ x: 0, y: 0 }}
+			defaultPosition={{ x: 10, y: 10 }}
 		>
 			<ResizableBox
 				width={size.width}
 				height={size.height}
 				lockAspectRatio={true}
 				minConstraints={[640, 480]}
-				className="box"
+				className="terminal-window"
 				maxConstraints={[
 					window.innerWidth,
 					window.innerHeight - size.height - 80,
 				]}
 				onResize={handleResize}
 			>
-				<div className="terminal-window">
-					<header className="login">{login}</header>
+				<div className="bar">
+					<AiFillCloseCircle
+						fill="#ff5f57"
+						stroke="#ff5f57"
+						height="0.7rem"
+						width="0.7rem"
+						className="icon"
+					/>
+					<IoMdRemoveCircle
+						fill="#febc2e"
+						stroke="#febc2e"
+						height="0.7rem"
+						width="0.7rem"
+						className="icon"
+					/>
+				</div>
+				<div className="login">{login}</div>
 
-					<div className="user-container">
-						<UserInput width={size.width} height={size.height} files={files} />
-					</div>
+				<div className="user-container">
+					<UserInput width={size.width} height={size.height} files={files} />
 				</div>
 			</ResizableBox>
 		</Draggable>
