@@ -6,7 +6,11 @@ import NewFile from "../Files/NewFile";
 import "./UserInput.css";
 import { FileType } from "../../types/FileType";
 
-const UserInput: React.FC<{ files: Array<FileType> }> = ({ files }) => {
+const UserInput: React.FC<{
+	files: Array<FileType>;
+	width: number;
+	height: number;
+}> = ({ files, width, height }) => {
 	const {
 		values,
 		typing,
@@ -26,6 +30,8 @@ const UserInput: React.FC<{ files: Array<FileType> }> = ({ files }) => {
 				<p className="tilde"> ~ </p>
 				<form onSubmit={handleClickInput}>
 					<input
+						width={width}
+						height={height}
 						autoFocus
 						type="text"
 						value={values.userInput}
@@ -50,7 +56,7 @@ const UserInput: React.FC<{ files: Array<FileType> }> = ({ files }) => {
 					</p>
 				)}
 			</div>
-			{newInput && <UserInput files={files} />}
+			{newInput && <UserInput width={width} height={height} files={files} />}
 		</>
 	);
 };
