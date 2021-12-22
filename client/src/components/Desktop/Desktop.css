@@ -1,6 +1,8 @@
 .desktop {
-	grid-column: 1/-1;
-	grid-row: 1/-1;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: 0.1fr 2fr 1fr;
+	height: 100vh;
 	background-image: url("https://512pixels.net/downloads/macos-wallpapers-6k/10-12-6k.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
