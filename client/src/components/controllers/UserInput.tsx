@@ -3,8 +3,10 @@ import { BsArrowRightShort } from "../icons/Icons";
 
 import File from "../Files/File";
 import NewFile from "../Files/NewFile";
-import "./UserInput.css";
+
 import { FileType } from "../../types/FileType";
+
+import "./UserInput.css";
 
 const UserInput: React.FC<{
 	files: Array<FileType>;
@@ -57,7 +59,14 @@ const UserInput: React.FC<{
 					(values.userInput === "mkdir" ||
 						(values.userInput === "touch" && <NewFile />))}
 				{showError && (
-					<p className="err">
+					<p
+						className={
+							values.userInput.includes("mkdir", 0) ||
+							values.userInput.includes("touch", 0)
+								? "none"
+								: "err"
+						}
+					>
 						{values.userInput}: {errorHandling.message}
 					</p>
 				)}

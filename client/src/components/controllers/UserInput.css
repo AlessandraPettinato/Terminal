@@ -41,3 +41,7 @@ input {
 	font-size: 1rem;
 	align-self: center;
 }
+
+.none {
+	display: none;
+}
