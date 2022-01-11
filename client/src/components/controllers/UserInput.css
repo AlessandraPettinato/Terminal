@@ -9,9 +9,7 @@
 
 .arrow {
 	grid-column: 1;
-	color: #41c731;
-	align-self: center;
-	font-size: 1.2rem;
+	margin: 0 0.3rem 0 0.5rem;
 }
 
 .tilde {

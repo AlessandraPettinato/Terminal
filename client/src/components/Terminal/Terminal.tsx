@@ -1,8 +1,8 @@
-import { useState, useEffect, MouseEventHandler } from "react";
+import { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
 import Draggable from "react-draggable";
 import { ResizableBox } from "react-resizable";
-import { AiFillCloseCircle, IoMdRemoveCircle } from "./Icons";
+import { AiFillCloseCircle, IoMdRemoveCircle } from "../icons/Icons";
 
 import { GET_ALL_FILES } from "../../queries/FileQueries";
 import { FileType } from "../../types/FileType";
