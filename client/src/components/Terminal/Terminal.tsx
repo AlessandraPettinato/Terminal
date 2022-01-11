@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, MouseEventHandler } from "react";
 import { useQuery } from "@apollo/client";
 import Draggable from "react-draggable";
 import { ResizableBox } from "react-resizable";

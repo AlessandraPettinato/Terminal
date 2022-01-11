@@ -1,6 +1,10 @@
 import "./Dock.css";
 
-const Dock: React.FC = () => {
+import { MouseEventHandler } from "react";
+
+const Dock: React.FC<{
+	handleClickTerminal: MouseEventHandler<HTMLImageElement>;
+}> = ({ handleClickTerminal }) => {
 	return (
 		<div className="dock-container">
 			<div>
@@ -19,6 +23,7 @@ const Dock: React.FC = () => {
 						<img
 							src="https://res.cloudinary.com/dg5lakmem/image/upload/v1640187916/favpng_macintosh-terminal-macos-command-line-interface_ziuzg2.png"
 							alt="terminal icon"
+							onClick={handleClickTerminal}
 						/>
 					</li>
 					<li>
