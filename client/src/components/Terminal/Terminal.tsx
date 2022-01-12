@@ -56,15 +56,15 @@ const Terminal: React.FC = () => {
 					<AiFillCloseCircle
 						fill="#ff5f57"
 						stroke="#ff5f57"
-						height="0.7rem"
-						width="0.7rem"
+						height="0.9rem"
+						width="0.9rem"
 						className="icon"
 					/>
 					<IoMdRemoveCircle
 						fill="#febc2e"
 						stroke="#febc2e"
-						height="0.7rem"
-						width="0.7rem"
+						height="0.9rem"
+						width="0.9rem"
 						className="icon"
 					/>
 				</div>
