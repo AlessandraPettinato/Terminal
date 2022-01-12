@@ -1,8 +1,16 @@
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { CREATE_FILE, GET_ALL_FILES } from "../../queries/FileQueries";
+import {
+	CREATE_FILE,
+	GET_ALL_FILES,
+	DELETE_FILE,
+} from "../../queries/FileQueries";
+
+import useFiles from "../Terminal/useFiles";
 
 const useHandleInput = () => {
+	const { files } = useFiles();
+
 	const [values, setValues] = useState({
 		userInput: "",
 	});
@@ -25,6 +33,10 @@ const useHandleInput = () => {
 		refetchQueries: [GET_ALL_FILES],
 	});
 
+	const [deleteFile] = useMutation(DELETE_FILE, {
+		refetchQueries: [GET_ALL_FILES],
+	});
+
 	const handleChangeInput = (e: any) => {
 		setBlinking(true);
 		setValues({
@@ -43,6 +55,10 @@ const useHandleInput = () => {
 				setShowError(false);
 				break;
 			case "touch":
+				setShowComponent(true);
+				setShowError(false);
+				break;
+			case "rm":
 				setShowComponent(true);
 				setShowError(false);
 				break;
@@ -70,6 +86,20 @@ const useHandleInput = () => {
 						? values.userInput.split("mkdir")[1].trim()
 						: values.userInput.split("touch")[1].trim(),
 					type: folder ? "FOLDER" : "TEXT_FILE",
+				},
+			});
+		}
+		let removeFile = values.userInput.includes("rm", 0);
+		if (removeFile) {
+			let searchFile = values.userInput.slice(3);
+			console.log(searchFile);
+			const foundFile = files.filter((obj) =>
+				Object.values(obj).some((val) => val.includes(searchFile))
+			);
+			const fileID = foundFile[0].id;
+			deleteFile({
+				variables: {
+					deleteFileId: fileID,
 				},
 			});
 		}

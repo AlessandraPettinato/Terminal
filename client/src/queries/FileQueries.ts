@@ -21,3 +21,13 @@ export const CREATE_FILE = gql`
 		}
 	}
 `;
+
+export const DELETE_FILE = gql`
+	mutation DeleteFile($deleteFileId: ID) {
+		deleteFile(id: $deleteFileId) {
+			id
+			name
+			type
+		}
+	}
+`;
