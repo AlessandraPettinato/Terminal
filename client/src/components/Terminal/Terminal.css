@@ -3,6 +3,7 @@
 	display: grid;
 	grid-template-rows: 25px 35px 30px;
 	border-radius: 2%;
+	background: black;
 }
 
 .bar {
@@ -13,15 +14,21 @@
 	align-items: center;
 	position: sticky;
 	top: 0;
+	height: 1.8rem;
 }
 
-.icon {
-	margin: 0.3rem 0 0.3rem 0.5rem;
+.icon-exit {
+	margin-left: 0.7rem;
+}
+
+.icon-minimize {
+	position: fixed;
+	left: 2.1rem;
 }
 
 .login {
 	background: black;
-	margin: 0.5rem 0 0 0.7rem;
+	margin: 1rem 0 0 0.7rem;
 	grid-row: 2;
 	font-size: 1rem;
 }
