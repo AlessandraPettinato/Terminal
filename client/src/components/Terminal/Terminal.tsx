@@ -1,8 +1,11 @@
 import { useState } from "react";
-
 import { Rnd } from "react-rnd";
 
-import { AiFillCloseCircle, IoMdRemoveCircle } from "../icons/Icons";
+import {
+	AiFillCloseCircle,
+	IoMdRemoveCircle,
+	AiFillFolder,
+} from "../icons/Icons";
 import useFiles from "./useFiles";
 import UserInput from "../controllers/UserInput";
 import "./Terminal.css";
@@ -44,6 +47,14 @@ const Terminal: React.FC = () => {
 					width="1rem"
 					className="icon-minimize"
 				/>
+				<AiFillFolder
+					fill="#19a4df"
+					stroke="#19a4df"
+					height="1rem"
+					width="1rem"
+					className="icon-folder"
+				/>
+				<p className="user">alessandrapettinato</p>
 			</div>
 			<div className="login">{login}</div>
 			<div className="user-container">
