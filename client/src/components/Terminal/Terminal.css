@@ -3,14 +3,14 @@
 	display: grid;
 	grid-template-rows: 25px 35px 30px;
 	border-radius: 2%;
-	background: black;
+	background: #1e1e1e;
 }
 
 .bar {
 	grid-row: 1;
-	background-color: #505050;
+	background-color: #39353d;
 	display: flex;
-	justify-content: flex-start;
+	justify-content: center;
 	align-items: center;
 	position: sticky;
 	top: 0;
@@ -18,16 +18,21 @@
 }
 
 .icon-exit {
-	margin-left: 0.7rem;
+	position: absolute;
+	left: 0.6rem;
 }
 
 .icon-minimize {
-	position: fixed;
+	position: absolute;
 	left: 2.1rem;
 }
 
+.icon-folder {
+	margin-right: 0.4rem;
+}
+
 .login {
-	background: black;
+	background: #1e1e1e;
 	margin: 1rem 0 0 0.7rem;
 	grid-row: 2;
 	font-size: 1rem;
@@ -37,4 +42,8 @@
 	display: flex;
 	flex-flow: column;
 	grid-row: 3;
+}
+
+.user {
+	font-size: 0.9rem;
 }
