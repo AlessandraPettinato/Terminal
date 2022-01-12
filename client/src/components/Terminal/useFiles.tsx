@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-
 import { useQuery } from "@apollo/client";
-import { GET_ALL_FILES } from "../../queries/FileQueries";
 
+import { GET_ALL_FILES } from "../../queries/FileQueries";
 import { FileType } from "../../types/FileType";
 
 const useFiles = () => {

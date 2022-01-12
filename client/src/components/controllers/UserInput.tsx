@@ -7,6 +7,7 @@ import NewFile from "../Files/NewFile";
 import { FileType } from "../../types/FileType";
 
 import "./UserInput.css";
+import "../Files/File.css";
 
 const UserInput: React.FC<{
 	files: Array<FileType>;
@@ -50,9 +51,8 @@ const UserInput: React.FC<{
 				<div className="files-container">
 					{showComponent &&
 						values.userInput === "ls" &&
-						files.map((item: { id: string; name: string; type: string }) => {
-							const { id, name, type } = item;
-							return <File key={id} name={name} type={type} />;
+						files.map((item) => {
+							return <File key={item.id} item={item} />;
 						})}
 				</div>
 				{newInput &&
@@ -62,7 +62,8 @@ const UserInput: React.FC<{
 					<p
 						className={
 							values.userInput.includes("mkdir", 0) ||
-							values.userInput.includes("touch", 0)
+							values.userInput.includes("touch", 0) ||
+							values.userInput.includes("rm", 0)
 								? "none"
 								: "err"
 						}

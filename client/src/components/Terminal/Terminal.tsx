@@ -1,18 +1,13 @@
-import { useState, useEffect } from "react";
-// import { useQuery } from "@apollo/client";
+import { useState } from "react";
 import Draggable from "react-draggable";
 import { ResizableBox } from "react-resizable";
-import { AiFillCloseCircle, IoMdRemoveCircle } from "../icons/Icons";
 
+import { AiFillCloseCircle, IoMdRemoveCircle } from "../icons/Icons";
 import useFiles from "./useFiles";
-// import { GET_ALL_FILES } from "../../queries/FileQueries";
-// import { FileType } from "../../types/FileType";
 import UserInput from "../controllers/UserInput";
 import "./Terminal.css";
 
 const Terminal: React.FC = () => {
-	// const { loading, error, data } = useQuery(GET_ALL_FILES);
-
 	const { files } = useFiles();
 
 	const [size, setSize] = useState({ width: 640, height: 480 });
@@ -20,8 +15,6 @@ const Terminal: React.FC = () => {
 	const handleResize = (data: any): void =>
 		setSize({ width: data.clientX, height: data.clientY });
 
-	// const [files, setFiles] = useState<Array<FileType>>([]);
-	// console.log(files);
 	const time: Date = new Date();
 
 	const date: string = new Date().toDateString().slice(0, 10);
@@ -33,15 +26,6 @@ const Terminal: React.FC = () => {
 	];
 
 	const login: string = `Last login: ${date} ${hour}:${minutes}:${seconds}`;
-
-	// useEffect(() => {
-	// 	if (!loading && data) {
-	// 		setFiles(data.getAllFiles.results);
-	// 	}
-	// }, [loading, data]);
-
-	// if (loading) <p>Loading...</p>;
-	// if (error) <p>Somethins went wrong: {error.message}</p>;
 
 	return (
 		<Draggable
