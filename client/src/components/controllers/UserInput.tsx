@@ -1,10 +1,12 @@
 import useHandleInput from "./useHandleInput";
-import { BsArrowRightShort } from "react-icons/bs";
+import { BsArrowRightShort } from "../icons/Icons";
 
 import File from "../Files/File";
 import NewFile from "../Files/NewFile";
-import "./UserInput.css";
+
 import { FileType } from "../../types/FileType";
+
+import "./UserInput.css";
 
 const UserInput: React.FC<{
 	files: Array<FileType>;
@@ -26,7 +28,13 @@ const UserInput: React.FC<{
 	return (
 		<>
 			<div className="form-container">
-				<BsArrowRightShort className="arrow" />
+				<BsArrowRightShort
+					fill="#41c731"
+					stroke="#41c731"
+					height="0.7rem"
+					width="0.7rem"
+					className="arrow"
+				/>
 				<p className="tilde"> ~ </p>
 				<form onSubmit={handleClickInput}>
 					<input
@@ -51,7 +59,14 @@ const UserInput: React.FC<{
 					(values.userInput === "mkdir" ||
 						(values.userInput === "touch" && <NewFile />))}
 				{showError && (
-					<p className="err">
+					<p
+						className={
+							values.userInput.includes("mkdir", 0) ||
+							values.userInput.includes("touch", 0)
+								? "none"
+								: "err"
+						}
+					>
 						{values.userInput}: {errorHandling.message}
 					</p>
 				)}
