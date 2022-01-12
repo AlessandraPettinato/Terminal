@@ -1,6 +1,8 @@
 import "./File.css";
 
-const File: React.FC<{ name: string; type: string }> = ({ name, type }) => {
+const File: React.FC<{ item: { type: string; name: string } }> = ({
+	item: { type, name },
+}) => {
 	return (
 		<>
 			<p className={type === "FOLDER" ? "documents" : "text-file"}>{name}</p>

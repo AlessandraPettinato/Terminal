@@ -32,6 +32,8 @@ input {
 .files-container {
 	grid-row: 3;
 	grid-column: 2/-1;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 }
 
 .err {
